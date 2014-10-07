@@ -1,0 +1,13 @@
+﻿my-tabs
+    my-pane(title="Hello")
+        h4 Hello
+        p Lorem ipsum dolor sit amet
+    my-pane(title="World")
+        h4 World
+        em Mauris elementum elementum enim at suscipit.
+        p
+            a(href="", ng-click="i = i + 1") counter: {{i || 0}}
+    button(ng-click="add(2,3)") add stuff
+    p {{sum || 0}}
+
+

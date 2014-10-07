@@ -1,0 +1,13 @@
+{
+    "name": "<%= app_name %>",
+    "version": "<%= app_version %>",
+    "description": "<%= app_description %>",
+    "license": "MIT",
+    "dependencies": {
+        "angular-animate": "~1.2.26",
+        "angular-mocks": "~1.2.26",
+        "angular-route": "~1.2.26",
+        "angular": "~1.2.26",
+        "jasmine": "~2.0.4"
+    }
+}

@@ -1,4 +1,4 @@
-# generator-vs-angular [![Build Status](https://secure.travis-ci.org/GaryB432/generator-vs-angular.png?branch=master)](https://travis-ci.org/GaryB432/generator-vs-angular)
+# generator-vs-angular
 
 > [Yeoman](http://yeoman.io) generator
 

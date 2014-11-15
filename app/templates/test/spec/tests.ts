@@ -1,5 +1,5 @@
 /// <reference path="../../typings/tsd.d.ts" />
-/// <reference path="../../app/js/main.d.ts" />
+/// <reference path="../../source/js/services.ts" />
 // thanks http://www.benlesh.com/2013/06/angular-js-unit-testing-services.html
 
 describe('testing Math service', function () {
@@ -19,3 +19,7 @@ describe('testing Math service', function () {
 
 });
 
+describe('tuples', () => {
+    var tup: [string, number, string] = ['a', 2, 'b'];
+    it('are cool', () => { expect(tup[1]).toBe(2); });
+});

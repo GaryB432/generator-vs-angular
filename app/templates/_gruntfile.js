@@ -55,6 +55,15 @@ module.exports = function (grunt) {
                 }
             }
         },
+        copy: {
+            app: {
+                files: [
+                    { src: 'bower_components/angular/angular.js', dest: 'app/js/lib/angular/angular.js' },
+                    { src: 'bower_components/angular-animate/angular-animate.js', dest: 'app/js/lib/angular-animate/angular-animate.js' },
+                    { src: 'bower_components/angular-route/angular-route.js', dest: 'app/js/lib/angular-route/angular-route.js' }
+                ]
+            }
+        },
         karma: {
             unit: {
                 configFile: 'karma.conf.js',
@@ -70,8 +79,7 @@ module.exports = function (grunt) {
                     target: 'es5',
                     sourceMap: false,
                     noImplicitAny: true,
-                    comments: false,
-                    declaration: true
+                    comments: false
                 }
             },
             test: {
@@ -90,13 +98,14 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-typescript');
     grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('jadeall', 'Run jade recursively.', function (arg1, arg2) {
         if (arguments.length !== 2) {
             grunt.fail.fatal('not enough args');
-        }
+        } 
         var jadeFiles = [];
         grunt.file.expand(arg1.concat('**/*.jade')).forEach(function (file) {
             var value = {};
@@ -109,5 +118,5 @@ module.exports = function (grunt) {
 
     grunt.registerTask('jade-app', ['jadeall:source/jade/:app/']);
     grunt.registerTask('test', ['karma']);
-    grunt.registerTask('default', ['jade-app', 'less', 'typescript']);
+    grunt.registerTask('default', ['copy:app', 'jade-app', 'less', 'typescript']);
 };

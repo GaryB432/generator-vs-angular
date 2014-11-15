@@ -4,10 +4,10 @@
     "description": "<%= app_description %>",
     "license": "MIT",
     "dependencies": {
-        "angular-animate": "~1.2.26",
-        "angular-mocks": "~1.2.26",
-        "angular-route": "~1.2.26",
-        "angular": "~1.2.26",
-        "jasmine": "~2.0.4"
+        "angular-animate": "^1.3.2",
+        "angular-mocks": "^1.3.2",
+        "angular-route": "^1.3.2",
+        "angular": "^1.3.2",
+        "jasmine": "~2.1.0"
     }
 }

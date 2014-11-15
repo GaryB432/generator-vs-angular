@@ -10,6 +10,7 @@ source/less/*.css
 
 secret.json
 app/
+bower_components/
 
 # Compiled source #
 ###################

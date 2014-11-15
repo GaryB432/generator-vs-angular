@@ -97,7 +97,6 @@ var VsAngularGenerator = yeoman.generators.Base.extend({
             this.copy("less/mixins.less", "source/less/mixins.less");
             this.copy("less/states.less", "source/less/states.less");
             this.copy("less/states/main.less", "source/less/states/main.less");
-            this.copy("test/index.html", "test/index.html");
             this.copy("test/spec/tests.ts", "test/spec/tests.ts");
         },
     },

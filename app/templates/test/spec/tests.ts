@@ -1,4 +1,5 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../app/js/main.d.ts" />
 // thanks http://www.benlesh.com/2013/06/angular-js-unit-testing-services.html
 
 describe('testing Math service', function () {

@@ -58,7 +58,9 @@ var VsAngularGenerator = yeoman.generators.Base.extend({
             this.copy("_gitattributes", ".gitattributes");
             this.copy("_gitignore", ".gitignore");
             this.copy("_Gruntfile.js", "Gruntfile.js");
+            this.copy("_karma.conf.js", "karma.conf.js");
             this.copy("_tsd.json", "tsd.json");
+            this.copy("_tsd.d.ts", "typings/tsd.d.ts");
             this.copy("_web.config", "web.config");
             this.copy("_web.Debug.config", "web.Debug.config");
             this.copy("_web.Release.config", "web.Release.config");
@@ -82,8 +84,6 @@ var VsAngularGenerator = yeoman.generators.Base.extend({
             this.copy("jade/templates/states/about.jade", "source/jade/templates/states/about.jade");
             this.copy("jade/templates/states/main.jade", "source/jade/templates/states/main.jade");
             this.copy("js/controllers/controllers.ts", "source/js/controllers/controllers.ts");
-            this.copy("js/directives/directives.js", "source/js/directives/directives.js");
-            this.copy("js/directives/directives.js.map", "source/js/directives/directives.js.map");
             this.copy("js/directives/directives.ts", "source/js/directives/directives.ts");
             this.copy("js/models/models.ts", "source/js/models/models.ts");
             this.copy("js/services/services.ts", "source/js/services/services.ts");
@@ -98,7 +98,7 @@ var VsAngularGenerator = yeoman.generators.Base.extend({
             this.copy("less/states.less", "source/less/states.less");
             this.copy("less/states/main.less", "source/less/states/main.less");
             this.copy("test/index.html", "test/index.html");
-            this.copy("test/tests.ts", "test/tests.ts");
+            this.copy("test/spec/tests.ts", "test/spec/tests.ts");
         },
     },
 

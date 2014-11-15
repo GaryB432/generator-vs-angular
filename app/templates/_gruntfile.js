@@ -14,6 +14,9 @@ module.exports = function (grunt) {
                     'source/js/controllers/**/*.ts',
                     'source/js/filters/**/*.ts',
                     'source/js/directives/**/*.ts'
+                ],
+                test: [
+                    'test/spec/**/*.ts'
                 ]
             },
             pkg: grunt.file.readJSON('./package.json')
@@ -46,10 +49,16 @@ module.exports = function (grunt) {
             },
             typescript: {
                 files: ['**/*.ts'],
-                tasks: ['typescript'], // qunit too
+                tasks: ['typescript', 'karma:unit'],
                 options: {
                     nospawn: true,
                 }
+            }
+        },
+        karma: {
+            unit: {
+                configFile: 'karma.conf.js',
+                singleRun: true
             }
         },
         typescript: {
@@ -59,7 +68,18 @@ module.exports = function (grunt) {
                 options: {
                     module: 'amd',
                     target: 'es5',
-                    sourceMap: true,
+                    sourceMap: false,
+                    noImplicitAny: true,
+                    comments: false,
+                    declaration: true
+                }
+            },
+            test: {
+                src: ['<%= project.javascript.test %>'],
+                options: {
+                    module: 'amd',
+                    target: 'es5',
+                    sourceMap: false,
                     noImplicitAny: true,
                     comments: false
                 }
@@ -71,11 +91,12 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-typescript');
+    grunt.loadNpmTasks('grunt-karma');
 
     grunt.registerTask('jadeall', 'Run jade recursively.', function (arg1, arg2) {
         if (arguments.length !== 2) {
             grunt.fail.fatal('not enough args');
-        } 
+        }
         var jadeFiles = [];
         grunt.file.expand(arg1.concat('**/*.jade')).forEach(function (file) {
             var value = {};
@@ -87,5 +108,6 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('jade-app', ['jadeall:source/jade/:app/']);
+    grunt.registerTask('test', ['karma']);
     grunt.registerTask('default', ['jade-app', 'less', 'typescript']);
 };

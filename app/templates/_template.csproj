@@ -42,6 +42,7 @@
     <Content Include="source\less\states\main.less" />
     <Content Include="test\index.html" />
     <Content Include="tsd.json" />
+    <Content Include="karma.conf.js" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
@@ -56,7 +57,7 @@
     <TypeScriptCompile Include="source\js\directives\directives.ts" />
     <TypeScriptCompile Include="source\js\models\models.ts" />
     <TypeScriptCompile Include="source\js\services\services.ts" />
-    <TypeScriptCompile Include="test\tests.ts" />
+    <TypeScriptCompile Include="test\spec\tests.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
